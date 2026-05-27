@@ -70,16 +70,7 @@ const server = http.createServer((req, res) => {
         return res.end();
     }
 
-    else if (req.url === '/') {
-        res.setHeader('Content-Type', 'text/html');
-        res.write('<html>');
-        res.write('<head><title>404</title></head>');
-        res.write('<body>');
-        res.write('<h1>404 - Page Not Found</h1>');
-        res.write('</body>');
-        res.write('</html>');
-        return res.end();
-    }
+  
 
 });
 
