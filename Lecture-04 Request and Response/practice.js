@@ -59,16 +59,7 @@ const server = http.createServer((req, res) => {
         return res.end();
     }
 
-    else if (req.url === '/Cart') {
-        res.setHeader('Content-Type', 'text/html');
-        res.write('<html>');
-        res.write('<head><title>Cart</title></head>');
-        res.write('<body>');
-        res.write('<h1>Cart Page</h1>');
-        res.write('</body>');
-        res.write('</html>');
-        return res.end();
-    }
+   
 
   
 
