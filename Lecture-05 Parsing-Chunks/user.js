@@ -1,9 +1,9 @@
-const http = require('http');
 const fs = require('fs');
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
 
     if (req.url === '/') {
+
         res.setHeader('Content-Type', 'text/html');
 
         res.write('<html>');
@@ -21,58 +21,41 @@ const server = http.createServer((req, res) => {
         res.write('</form>');
         res.write('</body>');
         res.write('</html>');
+
         return res.end();
     }
 
-        else if (req.url.toLocaleLowerCase() === '/submit' && req.method === 'POST') {
+    else if (req.url.toLowerCase() === '/submit' && req.method === 'POST') {
 
+        const chunks = [];
 
-            const chunks = [];
-            req.on('data',chunk=>{
+        req.on('data', (chunk) => {
 
-                console.log(chunk);
-                chunks.push(chunk);
+            console.log(chunk);
+            chunks.push(chunk);
 
-            })
-            req.on('end',()=>{
-                const fullBody = Buffer.concat(chunks).toString();
-                console.log(fullBody);
-               const parseData = new URLSearchParams(fullBody);
+        });
 
-            //    const bodyOBJ= {};
-            //    for (const [key ,val] of parseData.entries()){
-            //     bodyOBJ[key] = val;
-            //    }
+        req.on('end', () => {
 
+            const fullBody = Buffer.concat(chunks).toString();
 
+            console.log(fullBody);
 
-            //    console.log(bodyOBJ);
+            const parseData = new URLSearchParams(fullBody);
 
+            const bodyOBJ2 = Object.fromEntries(parseData);
 
-            // we same print data by below method
+            console.log(bodyOBJ2);
 
-               const bodyOBJ2 =Object.fromEntries(parseData);
-               console.log(bodyOBJ2)
+            fs.writeFileSync('data.txt', JSON.stringify(bodyOBJ2));
 
-
-            })
-
-            fs.writeFileSync('user.txt', 'Shivam devraj');
             res.statusCode = 302;
             res.setHeader('Location', '/');
+
             return res.end();
+        });
+    }
+};
 
-
-            
-        }
-
-   
-
-    
-
-});
-
-const PORT = 3000;
-server.listen(PORT, () => {
-    console.log(`Server is running on address http://localhost:${PORT}`);
-});
+module.exports = requestHandler;
