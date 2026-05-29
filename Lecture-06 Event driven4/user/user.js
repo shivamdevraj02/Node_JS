@@ -1,3 +1,4 @@
+const { error } = require('console');
 const fs = require('fs');
 
 const requestHandler = (req, res) => {
@@ -48,7 +49,13 @@ const requestHandler = (req, res) => {
 
             console.log(bodyOBJ2);
 
-            fs.writeFileSync('data.txt', JSON.stringify(bodyOBJ2));
+            fs.writeFile('data.txt', JSON.stringify(bodyOBJ2), (error) => {
+                if (error) {
+                    console.error("Error saving data to file");
+                } else {
+                    console.log("Data saved to file");
+                }
+            });
 
             res.statusCode = 302;
             res.setHeader('Location', '/');
