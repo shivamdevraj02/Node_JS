@@ -1,0 +1,143 @@
+<%- include('partials/head')%>
+  </head>
+
+  <body>
+    <style>
+      /* Basic beginner-friendly styling without CSS variables */
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f3f4f6;
+        color: #111;
+      }
+
+      /* Header / top bar */
+      .topbar {
+        background: #ef4444; /* red */
+        color: #fff;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .topbar a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .wrap {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        max-width: 480px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h1, h2 {
+        margin: 0 0 10px 0;
+      }
+
+      h2.section-title {
+        color: #ef4444;
+        font-weight: 700;
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+
+      p.lead {
+        margin: 0 0 12px 0;
+        color: #6b7280;
+      }
+
+      a.btn {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: rgb(227, 63, 63);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0 6px;
+      }
+
+      a.btn.secondary {
+        background: transparent;
+        color: #e24848;
+        border: 1px solid rgba(169, 22, 12, 0.3);
+      }
+
+      .list {
+        background: #fff;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        overflow: hidden;
+        text-align: left;
+        margin-top: 8px;
+      }
+
+      .list li {
+        padding: 12px 14px;
+        border-bottom: 1px solid #f3f3f3;
+        list-style: none;
+      }
+
+      .list li:last-child { border-bottom: 0; }
+
+      footer { margin-top: 12px; color: #6b7280; font-size: 13px; }
+
+      @media (max-width:420px) {
+        .card { padding: 14px; }
+        .wrap { padding: 12px; }
+        h2.section-title { font-size: 16px; }
+      }
+    </style>
+
+
+
+    <%- include('partials/nav') %>
+
+
+
+      <div class="wrap">
+        <div class="card">
+          <!-- <h1>Quick registration and demo UI</h1> -->
+
+          <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px">
+            <a class="btn" href="/user-details">Register</a>
+            <a class="btn secondary" href="/">Back</a>
+          </div>
+
+          <h2 class="section-title">Here are our registered homes:</h2>
+          <ul class="list">
+            <% if (Array.isArray(home) && home.length) { %>
+              <% home.forEach((h)=> { %>
+                <li>
+                  <%= h %>
+                </li>
+                <% }) %>
+                  <% } else { %>
+                    <li style="padding:1rem;color:var(--muted)">No homes registered yet.</li>
+                    <% } %>
+          </ul>
+
+          <footer>Made with simple styling</footer>
+        </div>
+      </div>
+
+
+  </body>
+
+  </html>
