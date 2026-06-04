@@ -58,7 +58,7 @@ app.get("/contact-us", (req, res, next) => {
 /*  Niche diye gay method se ham body ko parse karte iske liye hame  
 
 
-const bodyParser = require('body-parser');  karni parti he and terminal me npm install body-parser --save command bhi chalaya jata he..
+const bodyParser = require('body-parser'); karni parti he and terminal me npm install body-parser --save command bhi chalaya jata he..
 
 */
 
