@@ -1,0 +1,85 @@
+<%- include('partials/head') %>
+
+    <body>
+
+        <!-- <h1>Form submitted successfully</h1>
+    <title>Form Submitted</title> -->
+        <style>
+            /* Simple beginner-friendly styles without CSS variables */
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                background: #f5f7fb;
+                /* page background */
+                font-family: Arial, Helvetica, sans-serif;
+                color: #111827;
+            }
+
+            .main {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .card {
+                background: #ffffff;
+                /* card background */
+                padding: 24px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(32, 40, 60, 0.08);
+                max-width: 420px;
+                width: 100%;
+                text-align: center;
+            }
+
+            h1 {
+                margin: 0 0 10px;
+                font-size: 20px;
+            }
+
+            p {
+                color: #6b7280;
+                margin: 0 0 16px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 10px 16px;
+                background: #ef1b1b;
+                /* button color */
+                color: #ffffff;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: 600;
+            }
+
+            .btn:hover {
+                opacity: 0.95;
+            }
+        </style>
+
+
+
+
+
+        <%- include('partials/nav') %>
+
+
+
+
+            <div class="main">
+                <div class="card">
+
+                    <h1>Form submitted successfully</h1>
+                    <p>Your response has been recorded.</p>
+                    <a class="btn" href="/">Go to Home</a>
+
+                </div>
+            </div>
+    </body>
