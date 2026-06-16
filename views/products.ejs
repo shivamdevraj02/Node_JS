@@ -1,0 +1,161 @@
+<%- include('partials/html-top') %>
+
+    <head>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+
+            body {
+                background-color: #f4f4f4;
+            }
+
+            header {
+                background-color: #667eea;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .products-container {
+                width: 90%;
+                margin: 30px auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .product-card {
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: 0.3s;
+            }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .product-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-info h3 {
+                margin-bottom: 10px;
+            }
+
+            .price {
+                color: green;
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                background: #667eea;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #5563d6;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <%- include('partials/header') %>
+
+            <div class="products-container">
+
+
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x220" alt="Product">
+                    <div class="product-info">
+                        <h3>Smart Watch</h3>
+                        <p class="price">₹2,499</p>
+                        <button>Add to Cart</button>
+
+                        <button style="margin-top: 10px;">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x220" alt="Product">
+                    <div class="product-info">
+                        <h3>Bluetooth Speaker</h3>
+                        <p class="price">₹1,299</p>
+                        <button>Add to Cart</button>
+                        <button style="margin-top: 10px;">Buy Now</button>
+
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x220" alt="Product">
+                    <div class="product-info">
+                        <h3>Gaming Mouse</h3>
+                        <p class="price">₹899</p>
+                        <button>Add to Cart</button>
+                        <button style="margin-top: 10px;">Buy Now</button>
+
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x220" alt="Product">
+                    <div class="product-info">
+                        <h3>Wireless Keyboard</h3>
+                        <p class="price">₹1,499</p>
+                        <button>Add to Cart</button>
+                        <button style="margin-top: 10px;">Buy Now</button>
+
+                    </div>
+                </div>
+
+
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x220" alt="Product">
+                    <div class="product-info">
+                        <h3>Webcam HD</h3>
+                        <p class="price">₹1,999</p>
+                        <button>Add to Cart</button>
+                        <button style="margin-top: 10px;">Buy Now</button>
+
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x220" alt="Product">
+                    <div class="product-info">
+                        <h3>Monitor 24</h3>
+                        <p class="price">₹1,999</p>
+                        <button>Add to Cart</button>
+                        <button style="margin-top: 10px;">Buy Now</button>
+
+                    </div>
+                </div>
+
+            </div>
+
+    </body>
+
+    </html>
